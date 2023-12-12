@@ -7,12 +7,12 @@ porta_serial = 'COM3'  # Substitua pela porta serial específica
 velocidade_serial = 9600  # Substitua pela velocidade de baud desejada
 
 # Configurações do serviço de nuvem (Google Cloud Storage)
-#bucket_nome = 'seu-bucket-nome'  # Substitua pelo nome do seu bucket no Google Cloud Storage
-#objeto_nome = 'dados.txt'  # Substitua pelo nome do arquivo no qual os dados serão armazenados
+bucket_nome = 'seu-bucket-nome'  # Substitua pelo nome do seu bucket no Google Cloud Storage
+objeto_nome = 'dados.txt'  # Substitua pelo nome do arquivo no qual os dados serão armazenados
 
 # Credenciais do Google Cloud Storage
 # Certifique-se de configurar suas próprias credenciais de autenticação do Google Cloud
-#credenciais = 'caminho/para/sua/credencial.json'
+credenciais = 'caminho/para/sua/credencial.json'
 
 # Função para ler a saída serial e enviar para o Google Cloud Storage
 def ler_serial_e_enviar():
@@ -27,8 +27,8 @@ def ler_serial_e_enviar():
 
             if numero is not None:
                 # Envia o número para o Google Cloud Storage
-                print("")
-               # enviar_para_google_cloud_storage(numero)
+
+               enviar_para_google_cloud_storage(numero)
 
 # Função para extrair o número do início da linha
 def extrair_numero(linha):
