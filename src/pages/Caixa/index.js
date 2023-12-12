@@ -2,38 +2,42 @@ import React, { useState, useEffect } from "react";
 import { SafeAreaView, View, Text, TouchableOpacity, Platform, Share, MediaLibrary } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import * as FileSystem from 'expo-file-system';
+import Produtos from '../../pages/Produtos/index'
 // import RNFS from 'react-native-fs';
 
 import styles from "./style"
 
 const Caixa = ({ route }) => {
     const { total } = route.params;
-    const [valorTotal, setValorTotal] = useState(0);
+    const [valorLido, setValorLido] = useState(0);
     const [troco, setTroco] = useState(0);
     const navigation = useNavigation();
 
     useEffect(() => {
-        // Array com os valores das cédulas
-        const cedulas = [100,20,5];
-    
-        // Função para calcular o total das cédulas
-        const calcularTotalCedulas = () => {
-          let valorCedulas = 0;
-    
-          cedulas.forEach(cedula => {
-            const quantidadeCedulas = Math.floor(total / cedula);
-            valorCedulas += quantidadeCedulas * cedula;
-          });
-    
-          setValorTotal(valorCedulas);
-          setTroco(valorCedulas - total);
-        };
-    
-        calcularTotalCedulas();
-      }, [total]);
+      const lerArquivoTexto = async () => {
+        try {
+          // Substitua 'SEU_BUCKET' e 'SEU_CAMINHO/arquivo.txt' pelos seus dados reais
+          const bucket = 'iot_tp_app';
+          const filePath = 'gs://iot_tp_app/dados.txt';
+          const response = await fetch(`https://storage.googleapis.com/${bucket}/${filePath}`);
+          const text = await response.text();
+  
+          // Extrair os números do texto e calcular a soma
+          const numbers = text.match(/\d+/g); // Regex para encontrar números no texto
+          const soma = numbers ? numbers.reduce((acc, curr) => acc + parseInt(curr, 10), 0) : 0;
+          setValorLido(soma);
+        } catch (error) {
+          console.error('Erro ao ler o arquivo de texto:', error);
+        }
+
+        setTroco(valorLido - total);
+      };
+  
+      lerArquivoTexto();
+    }, []);
   
       const finalizarProcesso = async () => {
-        const conteudoNotaFiscal = `Nota Fiscal\nTotal: $${total}\nValor das Cédulas: $${valorTotal}\nTroco: $${troco}`;
+        //const conteudoNotaFiscal = `Nota Fiscal\nTotal: $${total}\nValor das Cédulas: $${valorTotal}\nTroco: $${troco}`;
     
         // try {
         //     const fileUri = `${FileSystem.cacheDirectory}nota_fiscal.txt`;
@@ -57,7 +61,7 @@ const Caixa = ({ route }) => {
         <Text style={{ fontSize: 24, color: 'white' }}>Total a ser Pago:</Text>
         <Text style={{ fontSize: 36, color: 'white' }}>${total}</Text>
         <Text style={{ fontSize: 24, color: 'white', marginTop: 20 }}>Valor lido das Notas:</Text>
-        <Text style={{ fontSize: 36, color: 'white' }}>${valorTotal}</Text>
+        <Text style={{ fontSize: 36, color: 'white' }}>${valorLido}</Text>
         <Text style={{ fontSize: 24, color: 'white', marginTop: 20 }}>Troco:</Text>
         <Text style={{ fontSize: 36, color: 'white' }}>${troco}</Text>
         <TouchableOpacity
