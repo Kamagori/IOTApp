@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "metal-pod-407721",
+  "private_key_id": "b3a75b3aa4a939f46755b69dbef6d50869bce335",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCppWJoM1tBbnuz\ne/0gAmgsW4Plj4OxctBFvrn2hAuYdnkXu9SUqpj9DJtc36gtmFQbEYrTeFQNmxcW\nODTjTvM07Ny5cBd0zwOR3LBCOKzdVFvie7xQ6inMGpjINoOVi5Q+8NSWceptHAb1\neoaXjBZsVuy8PDCNX/XXsTqg9rY8ibBw4l5tlIJeT+3qQxOAfI0VHZGZh5AVt4LF\npL0bpkdETweWxLS9t2mp/fdwPknjm/67330mUI2IIVN65F6QEoSwQkn4RPTply+t\nD5Aunz1hkRZHar4GlOxH17vXXtuP38xRDdTiBxM8LYtj4T2GhIMEog2mHiHvjA+E\nHihWUlN1AgMBAAECggEAF9sNtV5yGNzloJiGa0+7VhrWYjEmETghKTWdUUOXR9dy\ncXp0ddAZlw1Z9EZFOt1+skHAwQ+yLime0P09aVuK9Wh7eh4qRj7tdGpRZOEzDyVT\njcvdmuPwKxHwZch4r3kDHei1fvnCP+6e3I/gHlkmNrzwfwstvquoVq5G8tH5UBYd\nR/jDkNqGK4mjr0RZr0IUqC2k2Fi9nBxD7baUBeyNH6lnHeDTJGB5s9mgv36OktMi\nzKwTkpdLik/qEpeeE92zvW+VLVOOB7z1llhBOYbqTA621uw1t7J/x+qaX0++NlC7\n8qEm1YWipnX1qGNDmyaH821uRBcpzkfmOBS+4Wo5DwKBgQDbZTkqi3xXYg6wbvRV\nTeWqueprECuwqsYkHSQdGGjH0QVAWgJvLhne4DS/96aURBjWYkFINevQtWF4lxgJ\n8oIGSaLldgzxDmSIIGVk0YODRnrpe4/tCeepJ0olFRPT/B55wf5iMjG2ert5ztLB\nv/Gqy8xTLOzklDvLT4nsXJ59mwKBgQDF80ZmHx7sCI+waYrbQ7sAwcuPXz6fl47o\nl4QNwVyp7AtVj5FLHZ1dL45y8hKMOjx1XIY2pItAzwrTwoh0R09KYdhVvz3CiDhF\nQu+xHhgR26/gBJmK8li12pLUuuQ/0mpKW9f8K63bWQ0/rg8nrLetATneTVsFZh5D\n+XVllmIMLwKBgQCMAlHz+6XzIemb4ILeeWKqjBC0GFK5YJIn88zbIHuloJdIVOie\nyP3LhKtFIqbUkYyEK5nbmkWOIGI+kbXOi0s89fsVkjt6DiRL1ti9+RKDURQZMjhM\nHfkPsroXZhcMPiW4r/tF8SBWgoZnmnxXFsYDqCERp2baDFsISQ8MnqKqJwKBgBse\n2I9XRjJKff1KiIbAAdf5tT0AbKEK7754O9RyoJJ7T5Y6ZEqpVQ0WXerrtZTWyb++\nnHjSFG4dr7sRlQZxWrCzNSOSXxDO/v6mTBa1K9EOi0si9jJuP68yshlJPcpstrlX\nWgEnrts1mTYXT+Y8qLGgUGBfss/LjOv9OpNfhjFrAoGBAMDs07a0HfbbwEXiFKj9\nG8HHIy+2cFIZboy3ygwdOE/KnE3Aizu7he1w3HL7a6I3GiycR1PjcIDxNKKi1ZxV\nZiv4B7gkMcxy5nTj0Dv09OmgZ7SvhNU1y6/cWFVvRtOsh04aV/EU3vaOmjUOJptr\nkdSs1Xj6INCmSjdYMdU2b6et\n-----END PRIVATE KEY-----\n",
+  "client_email": "iot-tp-app@metal-pod-407721.iam.gserviceaccount.com",
+  "client_id": "106641949706025414509",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/iot-tp-app%40metal-pod-407721.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
