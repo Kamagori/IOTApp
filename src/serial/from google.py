@@ -46,11 +46,17 @@ def enviar_para_google_cloud_storage(dados):
     client = storage.Client.from_service_account_json(credenciais)
     bucket = client.bucket(bucket_nome)
 
-    # Cria um objeto Blob e envia os dados para o Google Cloud Storage
+    # Cria um objeto Blob e obtém o conteúdo atual do objeto, se existir
     blob = bucket.blob(objeto_nome)
-    blob.upload_from_string(str(dados), content_type='text/plain')
+    conteudo_existente = blob.download_as_text() if blob.exists() else ''
 
-    print(f'Dados enviados para o Google Cloud Storage.')
+    # Concatena o novo dado ao conteúdo existente
+    novo_conteudo = conteudo_existente + str(dados) + '\n'
+
+    # Envia o novo conteúdo para o Google Cloud Storage
+    blob.upload_from_string(novo_conteudo, content_type='text/plain')
+
+    print(f'Dados adicionados ao Google Cloud Storage.')
 
 if __name__ == '__main__':
     ler_serial_e_enviar()
